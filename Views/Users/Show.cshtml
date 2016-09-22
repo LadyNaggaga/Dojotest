@@ -1,0 +1,7 @@
+@model TheWall.Models.User
+@{
+    ViewBag.Title = "Show";
+}
+
+<h2>Welcome, @Model.FirstName!</h2>
+<a class="formElement" asp-controller="Users" asp-action="Logout"><button>Logout</button></a>

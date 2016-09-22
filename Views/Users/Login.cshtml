@@ -1,0 +1,17 @@
+@{
+    ViewBag.Title = "Login";
+}
+
+@{
+    <p>@ViewData["Error"]</p>
+}
+<h1>Login Page</h1>
+<form class="blockForm" action="/login" method="post">
+    Email: <input class="formElement" name="Email" type="text"/>
+    Password: <input class="formElement" name="Password" type="password"/>
+    <button type="submit">Login</button>
+</form>
+<p>Not Yet Registered?</p>
+<p>
+  <a href="/">Go To Registration Page</a>
+</p>
