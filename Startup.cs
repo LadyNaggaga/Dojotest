@@ -12,12 +12,12 @@ namespace TheWall
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            // var connection = @"Server=localhost;
-            //                 Port=8889;
-            //                 database=efwall;
-            //                 uid=root;
-            //                 pwd=root;";
-            // services.AddDbContext<DataContext>(options => options.UseMySql(connection));
+             var connection = @"Server=localhost;
+                         Port=8889;
+                            database=efwall;
+                            uid=root;
+                            pwd=root;";
+            services.AddDbContext<DataContext>(options => options.UseMySql(connection));
             services.AddMvc();
             services.AddDistributedMemoryCache();
             services.AddSession();
@@ -28,7 +28,6 @@ namespace TheWall
             loggerFactory.AddConsole();
             app.UseSession();
             app.UseStaticFiles();
-
             app.UseMvc();
         }
     }
@@ -40,6 +39,7 @@ namespace TheWall
             IWebHost host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseIISIntegration()
                 .UseStartup<Startup>()
                 .Build();
 
